@@ -1,4 +1,4 @@
 
 <h1 align="center">
-    <img alt="PlantManager" title="PlantManager" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/nlw5.png?raw=true" height="30" width="40" />
+    <img alt="PlantManager" title="PlantManager" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/nlw5.png?raw=true" height="100" width="110" />
 </h1>
