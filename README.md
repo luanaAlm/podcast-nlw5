@@ -1,16 +1,10 @@
 ## Projeto Podcast 
 
-###  NextLevelWeek 5 - Rocketseat
+### ✨ NextLevelWeek 5 - Rocketseat
 
 <h1 align="center">
     <img alt="PlantManager" title="Podcast" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/nlw5.png?raw=true" height="200"  />
 </h1>
-
-<p align="center">
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  
-</p>
 
 ## 💻 Projeto
 
@@ -29,4 +23,5 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Next.js](https://nextjs.org/)
 - [Sass](https://sass-lang.com/)
 
+<hr>
 Feito por [Luana Almeida](https://github.com/luanaAlm) 
