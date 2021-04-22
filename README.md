@@ -28,4 +28,6 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/SantanaDeveloper/podcastr-nlw-5/blob/main/LICENSE.md) para mais detalhes.
 
 <hr>
+
 Feito por [Luana Almeida](https://github.com/luanaAlm) 
+
