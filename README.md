@@ -8,13 +8,11 @@
 
 ## 💻 Projeto
 
- - Landing page com:
- - Home
- - Serviços
- - Sobre Nós
- - Fotos 
- - Contatos
-
+ - Site para transmissão de Podcasts.
+ - Este projeto foi desenvolvido pela ** [ @Rocketseat ] (https://github.com/Rocketseat) ** , evento ** [ Next Level Week # 5 ] (https://nextlevelweek.com/) **
+<h1 align = "center">
+    <img alt = "PlantManager" title = "Podcast Projeto" src = "https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/app-podcast.png?raw=true" />
+</h1>
 ## 🧪 Tecnologias
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
