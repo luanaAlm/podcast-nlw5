@@ -13,3 +13,9 @@
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
+## 💻 Projeto
+
+<h1 align="center">
+    <img alt="PlantManager" title="Podcast Projeto" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/app-podcast.png?raw=true" height="400"  />
+</h1>
+
