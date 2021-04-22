@@ -6,6 +6,8 @@ import { ptBR } from "date-fns/locale";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from "./episode.module.scss";
+
+
 type Episode = {
     id: string;
     title: string;
@@ -63,12 +65,27 @@ export default function Episode({episode}: EpisodeProps){
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const { data } = await api.get('episodes', {
+    params: {
+      _limit: 12,
+      _sort: "published_at",
+      _order: "desc",
+    },
+  });
+
+  const paths = data.map(episode => {
     return{
-        paths: [],
+      params: {
+        slug: episode.id
+      }
+    }
+  })
+   
+    return{
+        paths: [paths],
         fallback: 'blocking'
     }
 }
-
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const { slug } = ctx.params;
