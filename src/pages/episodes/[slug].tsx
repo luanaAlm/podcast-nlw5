@@ -6,28 +6,27 @@ import { ptBR } from "date-fns/locale";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from "./episode.module.scss";
-
+import { useRouter } from "next/router";
 
 type Episode = {
-    id: string;
-    title: string;
-    thumbnail: string;
-    members: string;
-    publishedAt: string;
-    duration: number;
-    durationAsString: string;
-    url: string;
-    description: string;
-}
+  id: string;
+  title: string;
+  thumbnail: string;
+  members: string;
+  duration: number;
+  durationAsString: string;
+  url: string;
+  publishedAt: string;
+  description: string;
+};
 
 type EpisodeProps = {
-    episode: Episode;
-}
+  episode: Episode;
+};
 
-export default function Episode({episode}: EpisodeProps){
-    
-    return(
-        <div className={styles.episodeContainer}>
+const Episode = ({ episode }: EpisodeProps) => {
+  return (
+    <div className={styles.episodeContainer}>
       <div className={styles.episode}>
         <div className={styles.thumbnailContainer}>
           <Link href="/">
@@ -61,53 +60,55 @@ export default function Episode({episode}: EpisodeProps){
         />
       </div>
     </div>
-    )
-}
+  );
+};
+
+export default Episode;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await api.get('episodes', {
+  const { data } = await api.get("episodes", {
     params: {
-      _limit: 12,
-      _sort: "published_at",
-      _order: "desc",
+      __limit: 2,
+      __sort: "published_at",
+      __order: "desc",
     },
   });
 
-  const paths = data.map(episode => {
-    return{
-      params: {
-        slug: episode.id
-      }
-    }
-  })
-   
-    return{
-        paths: [paths],
-        fallback: 'blocking'
-    }
-}
+  const paths = data.map((episode) => ({
+    params: {
+      slug: episode.id,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-    const { slug } = ctx.params;
-    const { data } = await api.get(`/episodes/${slug}`)
+  const { slug } = ctx.params;
 
-    const episode = {
-        id: data.id,
-        title: data.title,
-        thumbnail: data.thumbnail,
-        members: data.members,
-        publishedAt: format(parseISO(data.published_at), 'd MMM yy', {locale: ptBR}),
-        duration: Number(data.file.duration),
-        durationAsString: convertDurationToTimeString(Number(data.file.duration)),
-        description: data.description,
-        url: data.file.url,
-    }
+  const { data } = await api.get(`/episodes/${slug}`);
 
-    return{
-        props: {
-            episode,
-        },
-        revalidate: 60 * 60 * 24, //24 horas
+  const episode = {
+    id: data.id,
+    title: data.title,
+    thumbnail: data.thumbnail,
+    members: data.members,
+    publishedAt: format(parseISO(data.published_at), "d MMM yy", {
+      locale: ptBR,
+    }),
+    duration: Number(data.file.duration),
+    durationAsString: convertDurationToTimeString(Number(data.file.duration)),
+    description: data.description,
+    url: data.file.url,
+  };
 
-    }
-}
+  return {
+    props: {
+      episode,
+    },
+    revalidate: 60 * 60 * 24, //24 hours
+  };
+};
