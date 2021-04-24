@@ -3,7 +3,7 @@
 ### ✨ NextLevelWeek 5 - Rocketseat
 
 <h1 align="center">
-    <img alt="PlantManager" title="Podcast" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/nlw5.png?raw=true" height="200"  />
+    <img alt="PlantManager" title="Podcast" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/logo.svg" height="50"  />
 </h1>
 
 ## 💻 Projeto
@@ -11,7 +11,7 @@
  - Site para transmissão de Podcasts.
  - Este projeto foi desenvolvido pela **[ @Rocketseat ](https://github.com/Rocketseat)** , evento **[ Next Level Week # 5 ](https://nextlevelweek.com/)**
 <h1 align = "center">
-    <img alt = "PlantManager" title = "Podcast Projeto" src = "https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/app-podcast.png?raw=true" />
+    <img alt = "PlantManager" title = "Podcast Projeto" src = "https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/screencapture.png" />
 </h1>
 ## 🧪 Tecnologias
 
