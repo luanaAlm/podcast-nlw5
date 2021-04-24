@@ -3,7 +3,7 @@
 ### ✨ NextLevelWeek 5 - Rocketseat
 
 <h1 align="center">
-    <img alt="PlantManager" title="Podcast" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/img-git/nlw5.png?raw=true" height="200"  />
+    <img alt="PlantManager" title="Podcast" src="https://github.com/luanaAlm/podcast-nlw5/blob/main/public/logo.svg" height="200"  />
 </h1>
 
 ## 💻 Projeto
