@@ -7,6 +7,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from "./episode.module.scss";
 import { usePlayer } from "../../contexts/PlayerContext";
+import Head from "next/head";
 
 
 type Episode = {
@@ -29,6 +30,10 @@ const Episode = ({ episode }: EpisodeProps) => {
   const { play } = usePlayer();
   return (
     <div className={styles.episodeContainer}>
+      <Head>
+        <title> {episode.title } | Podcastr </title>
+      </Head>
+      
       <div className={styles.episode}>
         <div className={styles.thumbnailContainer}>
           <Link href="/">
