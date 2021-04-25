@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { usePlayer } from '../../contexts/PlayerContext';
 import Image from "next/image";
 import styles from './styles.module.scss';
-import Slider from 'rc-slider';
+import Slider, { Handle } from 'rc-slider';
 import 'rc-slider/assets/index.css'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
@@ -23,6 +23,7 @@ export function Player(){
         playPrevious,
         hasNext,
         hasPrevious,
+        clearPlayerState,
     } = usePlayer();
 
     useEffect(() =>{
@@ -41,6 +42,19 @@ export function Player(){
         audioRef.current.addEventListener('timeupdate', () => {
             setProgress(Math.floor(audioRef.current.currentTime));
         })
+    }
+
+    function handleSeek(amount: number){
+        audioRef.current.currentTime = amount;
+        setProgress(amount);
+    }
+
+    function handleEpisodeEnded(){
+        if ( hasNext ){
+            playNext()
+        }else{
+            clearPlayerState()
+        }
     }
 
     const episode = episodeList[currentEpisodeIndex]
@@ -77,6 +91,7 @@ export function Player(){
                             <Slider
                                 max={episode.duration}
                                 value={progress}
+                                onChange={handleSeek}
                                 trackStyle={{ backgroundColor: '#04D613'}}
                                 railStyle={{ backgroundColor: '#9F75FF'}}
                                 handleStyle={{ borderColor: '#04D613', borderWidth: 4}}
@@ -94,6 +109,7 @@ export function Player(){
                         ref={audioRef}
                         loop={isLooping}
                         autoPlay
+                        onEnded={handleEpisodeEnded}
                         onPlay={() => setPlayingState(true)}
                         onPause={() => setPlayingState(false)}
                         onLoadedMetadata={setupProgressListener}
